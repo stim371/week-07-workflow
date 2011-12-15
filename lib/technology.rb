@@ -18,7 +18,10 @@ class Technology
     state :published do
       event :retire,  :transitions_to => :retired
     end
-    state :retired
+    state :retired do
+      event :halloffame, :transitions_to => :halloffame
+    end
+    state :halloffame
   end
  
   def approve
@@ -36,6 +39,10 @@ class Technology
   
   def retire
     puts 'technology is retired'
+  end
+  
+  def halloffame
+    puts 'welcome to immortality'
   end
   
 end
